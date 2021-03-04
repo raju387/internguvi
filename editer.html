@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"> 
+      </script> 
+        <style>
+            body{
+                background-color: beige;
+            }
+            #heading{
+              width: 500px;
+              height: 400px;
+               background-color: white;
+                position: absolute;
+                left:450px;
+                top:100px;
+                box-shadow: 2px 2px green;
+            }
+            h1{
+                text-align: center;
+                text-decoration: overline;
+            }
+            #b1{
+                position: absolute;
+                top: 330px;
+                left: 100px;
+                width:100px;
+            }
+            #b2{
+                position: absolute;
+                top: 330px;
+                left: 250px;
+                width: 100px;
+            }
+            
+        </style>
+    </head>
+<body onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
+       <div id="heading">
+           <h1>User Information</h1>
+           <label for="Name">Enter name:</label>
+           <input type="text" class="form-control" placeholder="Enter name" id="name1" name="name1" >
+           <label for="age">Enter Your Age:</label>
+           <input type="number" class="form-control" placeholder="Enter Age"  id="name2">
+           <label for="month">Enter Your Date of Birth:</label>
+           <input type="date" class="form-control" placeholder="Enter Your Date of Birth">
+           <label for="phone">Enter Your phone number:</label>
+           <input type="text" class="form-control" placeholder="Enter Your phone number" id="name3">
+           <button type="submit" class="btn btn-success" id="b1" onclick="myfun()">Save</button>
+           <button type="submit" class="btn btn-danger" id="b2" onclick="myfunuction()">Logout</button>
+               
+    </div>
+    </body>
+    <script>
+        function myfunuction(){
+            window.location.href = 'signup.html';
+            
+        }
+        function myfun(){
+            var a;
+            var a1;
+            var z="";
+            a=document.getElementById("name1").value;
+            a1=document.getElementById("name2").value;
+            a2=document.getElementById("name3").value;
+            var num=a.length;
+            var num1=a1.length;
+            var num2=a2.length;
+            var f=0;
+            if(a.length==0){  
+                  z+="Name can not be Empty!!\n";
+                f=f+1;
+            }
+            if(a1.length==0){
+                z+="Age can not be Empty!!\n";
+                f=f+1;
+            }
+            if(a2.length<10){
+                z+="Number can not be less than 10!!!"
+                f=f+1;
+            }
+            if(f==0){
+                z+="Successfully submited the form!! You can edit Anytime";
+            }
+            alert(z);
+        }
+    </script>
+   <script>
+       function preventBack(){
+           window.history.forward();
+       }
+        setTimeout("preventBack()",0);
+        window.onunload = function(){
+            null
+        };
+    
+    
+    </script>
+</html>
